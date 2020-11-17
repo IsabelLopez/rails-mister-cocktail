@@ -1,0 +1,28 @@
+<div class="background">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1543791962-d56ec0590a25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80)">
+    <div class="container">
+      <h1> <strong>Mr.Cocktail</strong></h1>
+      <p>Create your cocktails and share them with friends</p>
+      <%= link_to "Create your cocktail", new_cocktail_path, class:'btn btn-flat' %>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 justify-content-center" >
+      <% @cocktails.each do |cocktail| %>
+            <%= link_to cocktail_path(cocktail) do %>
+              <div class="card-category custom-card" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1500217052183-bc01eee1a74e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80)">
+                <div>
+                  <div class="card-body">
+                    <h5 class="card-title text-light text-center"><%= cocktail.name %></h5>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
